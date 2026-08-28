@@ -142,3 +142,42 @@ Possible future enhancements include:
 ---
 
 ⭐ If you find this project useful, feel free to explore the code and learn from it.
+
+# Cricbuzz Match Screenshot Automation
+
+An automated script built with **Playwright** that launches Google Chrome, navigates to Cricbuzz, locates the latest live match, and captures a full-page screenshot as a PNG file.
+
+## 📋 Features
+
+* **Official Chrome Launch:** Automatically launches the official Google Chrome browser instead of the default Chromium binary.
+* **Smart Elements Tracking:** Dynamically waits for live score elements to render completely before taking actions.
+* **Full-Page Capture:** Captures the entire vertical length of the match center, including the detailed scorecard and recent commentary.
+* **Graceful Fallbacks:** Captures a fallback homepage screenshot if a specific live match link cannot be parsed.
+
+## ⚙️ How It Works (Workflow Description)
+
+1. **Launch Browser:** Initializes Playwright to launch a dedicated instance of the official **Google Chrome** browser with a standardized desktop viewport (1280x800).
+2. **Navigate to Cricbuzz:** Navigates directly to `https://cricbuzz.com` and pauses until network activity settles (`networkidle`) to guarantee all real-time live scores are fully loaded.
+3. **Identify Latest Match:** Automatically scans the homepage's live ticker or match center grid, targets the primary link for the **latest live match**, and simulates a user click.
+4. **Capture & Save PNG:** Waits for the match details page to render, captures a vertical **full-page screenshot** (ensuring the full scorecard and commentary are included), and saves the file locally as a high-quality **`.png` image**.
+
+## 🚀 Setup & Execution
+
+### Prerequisites
+Make sure you have Python installed, then install the required dependencies:
+
+```bash
+pip install playwright
+playwright install chrome
+```
+
+### Running the Script
+Execute the automation script using the following command:
+
+```bash
+python main.py
+```
+
+## 📂 Output
+Upon successful execution, the script will generate a file named **`latest_match_score.png`** in your project's root directory.
+
