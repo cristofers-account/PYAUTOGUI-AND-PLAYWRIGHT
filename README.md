@@ -1,5 +1,5 @@
 # PYAUTOGUI-AND-PLAYWRIGHT
-# 🖥️ PyAutoGUI Automation Assignment
+# 🖥️ PyAutoGUI Automation Project
 
 A Python-based GUI automation project created as part of my **Generative AI and Automation learning journey**.
 
